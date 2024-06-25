@@ -1,7 +1,55 @@
+import requests
 import tkinter as tk
 from tkinter import ttk
 import subprocess
+import os
+import shutil
+from urllib import request
 
+current_version = "1.01"
+server_url = "http://172.30.1.62"
+
+def show_alert(title, message):
+    root = tk.Tk()
+    root.title(title)
+    root.geometry("300x150")
+
+    label = tk.Label(root, text=message, font=("TkDefaultFont", 14, "bold"))
+    label.pack(pady=20)
+
+    button = tk.Button(root, text="OK", command=root.destroy)
+    button.pack(pady=10)
+
+    root.mainloop()
+
+
+
+#update_server_url = "http://172.30.1.62/"
+
+
+def check_update(current_version):
+    last_version = requests.get(server_url, current_version)
+    if current_version == "last_version":
+        show_alert("version check", "this is latest version so you don't need to update this file")
+    else :
+        filename = "update.zip"
+        save_path = "./update/" + filename
+        response = requests.get(server_url, params={"filename": filename})
+
+        if response.status_code == 200:
+    # 파일 다운로드
+            with open(save_path, "wb") as f:
+                for chunk in response.iter_content(chunk_size=1024):
+                     f.write(chunk)
+
+                     print(f"파일 다운로드 완료: {save_path}")
+        else:
+    # 파일 없음 또는 서버 오류
+            print(f"파일 다운로드 실패: {response.status_code}")
+    
+
+
+    
 def run_program(profile_path, url):
     program_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
     
@@ -13,6 +61,8 @@ def run_program(profile_path, url):
 window = tk.Tk()
 window.title("Admin Portal")
 window.deiconify()
+
+version = 1.01
 
 profile_paths = [
     "ECCK",
@@ -48,6 +98,7 @@ url_TFTticket = "https://trilliumflow.freshservice.com/a/dashboard/default"
 
 label = tk.Label(window, text="Select the site that you want to access and add your account and set your profile so it keeps logon status. - copyright hyunho.hong", font=('TkDefaultFont', 16, 'bold'))
 label.grid(row=0, column=1, columnspan=4, pady=15)
+
 
 for i, profile_path in enumerate(profile_paths):
     ecck_label = tk.Label(window, text=profile_path, font=('TkDefaultFont', 14, 'italic'))
@@ -101,6 +152,16 @@ for i in range(len(profile_paths) + 1):
 
 style = ttk.Style()
 style.configure('Cute.TButton', font=('TkDefaultFont', 12, 'bold'), relief='flat', borderwidth=0, background='pink', foreground='black', padding=10)
+
+
+##update button
+update_button = ttk.Button(
+    window, 
+    text="업데이트 확인", 
+    style='Update.TButton', 
+    command=check_update(current_version)
+)
+update_button.grid(row=len(profile_paths) + 1, column=4, columnspan=2, sticky='nsew')
 
 # 프로그램을 완전히 종료하도록 변경
 window.protocol("WM_DELETE_WINDOW", window.quit)
