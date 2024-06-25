@@ -5,10 +5,10 @@ import subprocess
 import os
 import shutil
 from urllib import request
-
+import json
 current_version = "1.01"
 server_url = "http://172.30.1.62"
-
+update_info = "http://172.30.1.62/update/info"
 def show_alert(title, message):
     root = tk.Tk()
     root.title(title)
@@ -28,22 +28,15 @@ def show_alert(title, message):
 
 
 def check_update(current_version):
-    last_version = requests.get(server_url, current_version)
-    if current_version == "last_version":
-        show_alert("version check", "this is latest version so you don't need to update this file")
-    else :
-        filename = "update.zip"
-        save_path = "./update/" + filename
-        response = requests.get(server_url, params={"filename": filename})
+    response = requests.get(update_info, json=update_info)
 
-        if response.status_code == 200:
+    if response.status_code == 200:
+            data = response.json()
     # 파일 다운로드
-            with open(save_path, "wb") as f:
-                for chunk in response.iter_content(chunk_size=1024):
-                     f.write(chunk)
+            last_version = data['version']
+            print(f'Last version: {last_version}')
 
-                     print(f"파일 다운로드 완료: {save_path}")
-        else:
+    else:
     # 파일 없음 또는 서버 오류
             print(f"파일 다운로드 실패: {response.status_code}")
     
