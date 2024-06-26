@@ -5,14 +5,14 @@ app = Flask(__name__)
 
 # 업데이트 파일 목록 및 정보
 update_info = {
-    "version": "1.0.1",
+    "version": "1.01",
     "filename": "update.zip",
     "url": "C:/Users/HHH/Documents/VScode/IT-Concept/Streamdeck_Service/BackEnd/test.txt",
     "description": "버그 수정 및 기능 추가",
 }
 
 go_downloadinfo = {
-    "version": "1.0.1",
+    "version": "1.01",
     "filename": "update.zip",
     "url": "C:/Users/HHH/Documents/VScode/IT-Concept/Streamdeck_Service/BackEnd/test.txt",
     "description": "버그 수정 및 기능 추가",

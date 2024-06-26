@@ -35,7 +35,12 @@ def check_update(current_version):
             print(data)
     # 파일 다운로드
             last_version = data['version']
+            if (last_version == current_version):
+                print("yes")
+                response1 = requests.get("http://10.82.60.21/go/download")
+                return response1
             print(f'Last version: {last_version}')
+            
 
     else:
     # 파일 없음 또는 서버 오류
@@ -153,8 +158,9 @@ update_button = ttk.Button(
     window, 
     text="업데이트 확인", 
     style='Update.TButton', 
-    command=check_update(current_version)
+    command=lambda: check_update(current_version)
 )
+
 update_button.grid(row=len(profile_paths) + 1, column=4, columnspan=2, sticky='nsew')
 
 # 프로그램을 완전히 종료하도록 변경
