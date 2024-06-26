@@ -7,8 +7,8 @@ import shutil
 from urllib import request
 import json
 current_version = "1.01"
-server_url = "http://172.30.1.62"
-update_info = "http://172.30.1.62/update/info"
+server_url = "http://10.82.60.21"
+update_info = "http://10.82.60.21/update/info"
 def show_alert(title, message):
     root = tk.Tk()
     root.title(title)
@@ -32,6 +32,7 @@ def check_update(current_version):
 
     if response.status_code == 200:
             data = response.json()
+            print(data)
     # 파일 다운로드
             last_version = data['version']
             print(f'Last version: {last_version}')
