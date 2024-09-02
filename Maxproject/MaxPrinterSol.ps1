@@ -18,29 +18,29 @@
 
 
 $MaximusRegion_IPHash = @{
-    "MXSKR-SG-S-BUCHEON" = "10.82.2.1"
-    "MXSKR-SG-S-BUPYEONG" = "10.82.3.1"
-    "MXSKR-SG-S-INCHEON" = "10.82.4.1"
-    "MXSKR-SG-S-WONJU" = "10.82.5.1"
-    "MXSKR-SG-S-BUSAN" = "10.82.7.1"
-    "MXSKR-SG-S-GWANAK" = "10.82.9.1"
-    "MXSKR-SG-S-SEOULEAST" = "10.82.10.1"
-    "MXSKR-SG-S-GOYANG" = "10.82.11.1"
-    "MXSKR-SG-S-YONGIN" = "10.82.12.1"
-    "MXSKR-SG-S-SIHEUNG" = "10.82.13.1"
-    "MXSKR-SG-S-GANGNEUNG" = "10.82.14.1"
-    "MXSKR-SG-S-GWANGJU" = "10.82.15.1"
-    "MXSKR-SG-S-JEONJU" = "10.82.16.1"
-    "MXSKR-SG-S-SEJONG" = "10.82.17.1"
-    "MXSKR-SG-S-CHEONGJU" = "10.82.18.1"
-    "MXSKR-SG-S-BUSANEAST" = "10.82.19.1"
-    "MXSKR-SG-S-ULSAN" = "10.82.21.1"
-    "MXSKR-SG-S-GIMHAE" = "10.82.22.1"
-    "MXSKR-SG-S-CHANGWON" = "10.82.23.1"
-    "MXSKR-SG-S-CHUNCHEON" = "10.82.25.1"
-    "MXSKR-SG-S-BUSANDONGSEO" = "10.82.26.1"
-    "Huntress Test" = "10.10.10.10"
-    "Test_deploy_Intune" = "8.8.8.8"
+    "MXSKR-SG-S-BUCHEON" = "10.82
+    "MXSKR-SG-S-BUPYEONG" = "10.82
+    "MXSKR-SG-S-INCHEON" = "10.82
+    "MXSKR-SG-S-WONJU" = "10.82
+    "MXSKR-SG-S-BUSAN" = "10.82
+    "MXSKR-SG-S-GWANAK" = "10.82
+    "MXSKR-SG-S-SEOULEAST" = "10.82
+    "MXSKR-SG-S-GOYANG" = "10.82
+    "MXSKR-SG-S-YONGIN" = "10.82
+    "MXSKR-SG-S-SIHEUNG" = "10.82
+    "MXSKR-SG-S-GANGNEUNG" = "10.82
+    "MXSKR-SG-S-GWANGJU" = "10.82
+    "MXSKR-SG-S-JEONJU" = "10.82
+    "MXSKR-SG-S-SEJONG" = "10.82
+    "MXSKR-SG-S-CHEONGJU" = "10.82
+    "MXSKR-SG-S-BUSANEAST" = "10.82
+    "MXSKR-SG-S-ULSAN" = "10.82
+    "MXSKR-SG-S-GIMHAE" = "10.82
+    "MXSKR-SG-S-CHANGWON" = "10.82
+    "MXSKR-SG-S-CHUNCHEON" = "10.82
+    "MXSKR-SG-S-BUSANDONGSEO" = "10.82
+    "Huntress Test" = "10.10
+    "Test_deploy_Intune" = "8.8
 }
 
 #add your printerdriver for each printer group. for example if you need to add a printer on the script you need to put your printer same as below and add the group on the proper group.
@@ -119,9 +119,9 @@ $displayName
 #>
 
 #Azure AD app registration
-$clientId = "913d4700-da6c-4cca-9e24-80011a825a37"
-$clientSecret = "OOn8Q~~~NrJ3DyAfuC6z6GYBOvYm_4gSyvAuqdjU"
-$tenantId = "7a435ef7-4db8-4df1-bf03-da4215aabbf6"
+$clientId = 
+$clientSecret = 
+$tenantId = 
 
 # Define the Microsoft Graph API endpoint for token acquisition
 $tokenEndpoint = "https://login.microsoftonline.com/$tenantId/oauth2/token"
