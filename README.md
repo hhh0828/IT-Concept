@@ -15,3 +15,11 @@ Packaging each site's printer drivers, and deploy them for the users who works o
 고객사의 인프라는 Azure를 통하여 구성 되어있으며, 사용자 및 컴퓨터의 대한 IAM은 모두 Azure에서 진행
 AzureAD 한계로 사용자의 컴퓨터에서 그룹 정보 식별이 불가 함. 이를 극복하기 위한 방법으로 Azure APP reigister 및 Graph API를 사용하여 스크립트를 배포하고 그룹정보를 사용자 컴퓨터에서 식별하고, 
 사용자 그룹 정보에 맞는 프린터 드라이버와 프로그램을 배포 설치 하였고, Intune의 APP detect를 통하여 지속적 관리 및 자동 설치를 구성하였음.
+
+
+
+//2년 4개월간 Tickets resolved Data from GLPI Export
+
+
+//Stream Deck Service.
+여러 고객사를 하나의 컴퓨터에서 관리하기 위하여, 각 고객사의 MS365 또는 Azure를 Private 모드가 아닌 Edge Profile에 등록하여 사용 가능한 스트림덱 서비스. - 개인용 
